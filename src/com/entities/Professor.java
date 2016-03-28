@@ -4,11 +4,11 @@ package com.entities;
  * Created by abatewongc on 3/28/2016.
  */
 public class Professor {
-    //TODO: Add in all values, constructors, and g/s methods
 
     private int professorID, departmentID, pSocialID, phoneNumber, extensionNumber, officeNumber;
     private String fName, lName, email, linkedInUrl, facebookURL, twitterURL;
     private String[] otherSocialMediaURLS;
+    private int[] sectionIDs;
 
     public Professor(){}
 
@@ -17,6 +17,14 @@ public class Professor {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
+    }
+
+    public int[] getSectionIDs() {
+        return sectionIDs;
+    }
+
+    public void setSectionIDs(int[] sectionIDs) {
+        this.sectionIDs = sectionIDs;
     }
 
     public int getProfessorID() {

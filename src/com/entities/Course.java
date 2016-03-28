@@ -4,7 +4,6 @@ package com.entities;
  * Created by abatewongc on 3/28/2016.
  */
 public class Course {
-    //TODO: Add values, constructors, g/s methods
 
     private int courseID;
     private int[] sectionIDs;

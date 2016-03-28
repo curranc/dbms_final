@@ -11,6 +11,7 @@ public class College {
         this.collegeID = collegeID;
         this.collegeName = collegeName;
     }
+    public College(){}
 
     public int getCollegeID() {
 

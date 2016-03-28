@@ -12,7 +12,7 @@ import com.entities.Student;
 public interface IScheduleManager {
 
     void createScheduleManagerDB();
-    void createAccount(boolean isStudent, String fName, String lName, String email, String password, String confirmPassword);
+    void insertAccount(boolean isStudent, String fName, String lName, String email, String password, String confirmPassword);
 
 
     Object selectByID(int id);
@@ -30,7 +30,7 @@ public interface IScheduleManager {
     void insert(Object object);
 
 
-
+    void clear(int id);
     void delete(int id);
 
 }

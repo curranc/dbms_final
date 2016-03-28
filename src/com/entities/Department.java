@@ -65,6 +65,7 @@ public class Department {
         this.departmentName = departmentName;
         this.websiteURL = websiteURL;
     }
+    public Department(){}
 
 
 }

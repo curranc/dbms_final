@@ -4,7 +4,6 @@ package com.entities;
  * Created by abatewongc on 3/28/2016.
  */
 public class Student {
-    //TODO: Add in all student values, constructors, and g/s methods
 
     private int studentID, gradYear, phoneNumber, sSocialID;
     private int[] sectionsTaken;

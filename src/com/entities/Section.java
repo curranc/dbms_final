@@ -3,14 +3,53 @@ package com.entities;
 /**
  * Created by abatewongc on 3/28/2016.
  */
-public class Section {
-    private int sectionID, courseID, locationID, TimeID;
 
-    public Section(int sectionID, int courseID, int locationID, int timeID) {
+
+public class Section {
+    private int sectionID, courseID, professorID, locationID, timeStart, timeEnd, day;
+
+    public Section(int sectionID, int courseID, int professorID, int locationID, int timeStart, int timeEnd, int day) {
         this.sectionID = sectionID;
         this.courseID = courseID;
+        this.professorID = professorID;
         this.locationID = locationID;
-        TimeID = timeID;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.day = day;
+    }
+
+    public Section(){}
+
+    public int getProfessorID() {
+        return professorID;
+    }
+
+    public void setProfessorID(int professorID) {
+        this.professorID = professorID;
+    }
+
+    public int getTimeStart() {
+        return timeStart;
+    }
+
+    public void setTimeStart(int timeStart) {
+        this.timeStart = timeStart;
+    }
+
+    public int getTimeEnd() {
+        return timeEnd;
+    }
+
+    public void setTimeEnd(int timeEnd) {
+        this.timeEnd = timeEnd;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
     }
 
     public int getSectionID() {
@@ -35,13 +74,5 @@ public class Section {
 
     public void setLocationID(int locationID) {
         this.locationID = locationID;
-    }
-
-    public int getTimeID() {
-        return TimeID;
-    }
-
-    public void setTimeID(int timeID) {
-        TimeID = timeID;
     }
 }
