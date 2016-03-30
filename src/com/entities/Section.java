@@ -1,21 +1,29 @@
 package com.entities;
 
+
 /**
  * Created by abatewongc on 3/28/2016.
  */
 
 
 public class Section {
-    private int sectionID, courseID, professorID, locationID, timeStart, timeEnd, day;
+    private int sectionID, courseID, professorID, locationID;
+    private TimeSlot timeSlot;
 
-    public Section(int sectionID, int courseID, int professorID, int locationID, int timeStart, int timeEnd, int day) {
+    public Section(int sectionID, int courseID, int professorID, int locationID, TimeSlot timeSlot) {
         this.sectionID = sectionID;
         this.courseID = courseID;
         this.professorID = professorID;
         this.locationID = locationID;
-        this.timeStart = timeStart;
-        this.timeEnd = timeEnd;
-        this.day = day;
+        this.timeSlot = timeSlot;
+    }
+
+    public TimeSlot getTimeSlot() {
+        return timeSlot;
+    }
+
+    public void setTimeSlot(TimeSlot timeSlot) {
+        this.timeSlot = timeSlot;
     }
 
     public Section(){}
@@ -26,30 +34,6 @@ public class Section {
 
     public void setProfessorID(int professorID) {
         this.professorID = professorID;
-    }
-
-    public int getTimeStart() {
-        return timeStart;
-    }
-
-    public void setTimeStart(int timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    public int getTimeEnd() {
-        return timeEnd;
-    }
-
-    public void setTimeEnd(int timeEnd) {
-        this.timeEnd = timeEnd;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
     }
 
     public int getSectionID() {

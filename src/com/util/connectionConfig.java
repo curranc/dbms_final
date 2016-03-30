@@ -30,5 +30,17 @@ public class connectionConfig {
         }
         return connection;
     }
+    public static Connection getConnection(String address, String admin, String password) {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection(address, admin, password);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+
 
 }
