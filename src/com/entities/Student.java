@@ -5,9 +5,9 @@ package com.entities;
  */
 public class Student {
 
-    private int studentID, gradYear, phoneNumber, sSocialID;
+    private int studentID, gradYear;
     private int[] sectionsTaken;
-    private String fName, lName, email, linkedInURL, facebookURL, twitterURL;
+    private String fName, lName, email, linkedInURL, facebookURL, phoneNumber, twitterURL;
     private String[] otherSocialMediaURLs;
 
     public Student(){}
@@ -35,20 +35,12 @@ public class Student {
         this.gradYear = gradYear;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public int getsSocialID() {
-        return sSocialID;
-    }
-
-    public void setsSocialID(int sSocialID) {
-        this.sSocialID = sSocialID;
     }
 
     public int[] getSectionsTaken() {

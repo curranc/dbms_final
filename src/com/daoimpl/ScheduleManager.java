@@ -15,22 +15,23 @@ import java.sql.SQLException;
  * Created by abatewongc on 3/28/2016.
  */
 public class ScheduleManager implements IScheduleManager {
+
     private static void closeConnection(Connection connection, PreparedStatement preparedStatement, ResultSet resultSet) {
-        if(preparedStatement != null){
+        if (preparedStatement != null) {
             try {
                 preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(connection != null) {
+        if (connection != null) {
             try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        if(resultSet != null) {
+        if (resultSet != null) {
             try {
                 resultSet.close();
             } catch (SQLException e) {
@@ -38,12 +39,13 @@ public class ScheduleManager implements IScheduleManager {
             }
         }
     }
+
     private static Object getEntityTypeForEnum(EntityType entityType) {
-        switch(entityType) {
+        switch (entityType) {
             case COLLEGE:
                 return new College();
             case SECTION:
-                return new Section();
+                return new CourseSection();
             case STUDENT:
                 return new Student();
             case PROFESSOR:
@@ -54,13 +56,15 @@ public class ScheduleManager implements IScheduleManager {
                 return new Course();
             case TIME_SLOT:
                 return new TimeSlot();
+            case LOCATION:
+                return new Location();
         }
         privateLib.writeStringToConsole("Nonvalid Entity-Type, returning null because I'm a dick!");
         return null;
 
     }
-    private static String getEntityNameForEnum(EntityType entityType){
-        switch(entityType) {
+    private static String getEntityNameForEnum(EntityType entityType) {
+        switch (entityType) {
             case COLLEGE:
                 return "college";
             case SECTION:
@@ -75,98 +79,143 @@ public class ScheduleManager implements IScheduleManager {
                 return "course";
             case TIME_SLOT:
                 return "time_slot";
+            case LOCATION:
+                return "location";
         }
         privateLib.writeStringToConsole("Nonvalid Entity-Type, returning null because I'm a dick!");
         return null;
     }
-    private static Object loadResultSet(Object object, ResultSet resultSet){
+    private static PreparedStatement prepareStatementForEnum(EntityType entityType, PreparedStatement preparedStatement){
+        switch (entityType) {
+            case COLLEGE:
 
-        if(object instanceof College) {
+            case SECTION:
+
+            case STUDENT:
+
+            case PROFESSOR:
+
+            case DEPARTMENT:
+
+            case COURSE:
+
+            case TIME_SLOT:
+
+            case LOCATION:
+        }
+        privateLib.writeStringToConsole("Nonvalid Entity-Type, returning null because I'm a dick!");
+        return preparedStatement;
+    }
+
+
+
+    /**
+     * One of the most atrocious methods I've ever written. God help us all.
+     * @param object the original object
+     * @param resultSet the data
+     * @return an object with the non-array values filled out from the resultSet
+     */
+    private static Object loadNonArrayResultSet(Object object, ResultSet resultSet) {
+
+        if (object instanceof College) {
             try {
-                while(resultSet.next()){
+                while (resultSet.next()) {
                     ((College) object).setCollegeID(resultSet.getInt("collegeID"));
                     ((College) object).setCollegeName(resultSet.getString("collegeName"));
                     ((College) object).setDeanID(resultSet.getInt("deadID"));
-                    return object;
+
+
                 }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
-        } else if(object instanceof Course) {
+        } else if (object instanceof Course) {
             try {
-                while(resultSet.next()){
-                    ((Course) object).getCourseID();
-                    ((Course) object).getCourseTitle();
-                    ((Course) object).getDepartmentID();
-                    ((Course) object).getSectionIDs();
-                    ((Course) object).getCourseDescription();
-                    return object;
+                while (resultSet.next()) {
+                    ((Course) object).setCourseID(resultSet.getString("courseID"));
+                    ((Course) object).setCourseTitle(resultSet.getString("courseTitle"));
+                    ((Course) object).setDepartmentID(resultSet.getInt("departmentID"));
                 }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
 
-        } else if(object instanceof Department) {
+        } else if (object instanceof Department) {
             try {
-                while(resultSet.next()){
-                    ((Department) object).getDepartmentID();
-                    ((Department) object).getCollegeID();
-                    ((Department) object).getCourseIDs();
-                    ((Department) object).getDepartmentChairID();
-                    ((Department) object).getDepartmentName();
-                    ((Department) object).getWebsiteURL();
-
-                    return object;
+                while (resultSet.next()) {
+                    ((Department) object).setCollegeID(resultSet.getInt("collegeID"));
+                    ((Department) object).setDepartmentChairID(resultSet.getInt("departmentChairID"));
+                    ((Department) object).setDepartmentID(resultSet.getInt("departmentID"));
+                    ((Department) object).setDepartmentName(resultSet.getString("departmentName"));
+                    ((Department) object).setWebsiteURL(resultSet.getString("websiteURL"));
                 }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
 
-        } else if(object instanceof Professor) {
+        } else if (object instanceof Professor) {
             try {
-                while(resultSet.next()){
-                    ((Professor) object).getDepartmentID();
-                    ((Professor) object).getSectionIDs();
-                    ((Professor) object).getEmail();
-                    ((Professor) object).getExtensionNumber();
-                    ((Professor) object).getFacebookURL();
-                    ((Professor) object).getfName();
-                    ((Professor) object).getlName();
-                    ((Professor) object).getLinkedInUrl();
-                    ((Professor) object).getOfficeNumber();
-                    ((Professor) object).getOtherSocialMediaURLS();
-                    ((Professor) object).getProfessorID();
-                    ((Professor) object).getPhoneNumber();
-                    ((Professor) object).getTwitterURL();
-                    return object;
+                while (resultSet.next()) {
+                    ((Professor) object).setDepartmentID(resultSet.getInt("departmentID"));
+                    ((Professor) object).setEmail(resultSet.getString("email"));
+                    ((Professor) object).setExtensionNumber(resultSet.getString("extensionNumber"));
+                    ((Professor) object).setFacebookURL(resultSet.getString("facebookURL"));
+                    ((Professor) object).setLinkedInUrl(resultSet.getString("linkedInURL"));
+                    ((Professor) object).setfName(resultSet.getString("fName"));
+                    ((Professor) object).setlName(resultSet.getString("lName"));
+                    ((Professor) object).setOfficeNumber(resultSet.getString("officeNumber"));
+                    ((Professor) object).setPhoneNumber(resultSet.getString("phoneNumber"));
+                    ((Professor) object).setProfessorID(resultSet.getInt("professorID"));
+                    ((Professor) object).setTwitterURL(resultSet.getString("twitterURL"));
+
                 }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
 
-        } else if(object instanceof Section) {
+        } else if (object instanceof CourseSection) {
             try {
-                while(resultSet.next()){
-                    ((Section) object).getProfessorID();
-                    ((Section) object).getCourseID();
-                    ((Section) object).getLocationID();
-                    ((Section) object).getSectionID();
-                    ((Section) object).getTimeSlot();
-                    return object;
+                while (resultSet.next()) {
+                    ((CourseSection) object).setCourseID(resultSet.getInt("courseID"));
+                    ((CourseSection) object).setLocationID(resultSet.getInt("locationID"));
+                    ((CourseSection) object).setProfessorID(resultSet.getInt("professorID"));
+                    ((CourseSection) object).setTimeSlot(new TimeSlot(resultSet.getString("timeStart"), resultSet.getString("timeEnd"), resultSet.getInt("day")));
                 }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
 
-        } else if(object instanceof Student) {
+        } else if (object instanceof Student) {
+            try {
+                while (resultSet.next()) {
+                    ((Student) object).setEmail(resultSet.getString("email"));
+                    ((Student) object).setFacebookURL(resultSet.getString("facebook"));
+                    ((Student) object).setfName(resultSet.getString("fname"));
+                    ((Student) object).setGradYear(resultSet.getInt("gradyear"));
+                    ((Student) object).setLinkedInURL(resultSet.getString("linkedin"));
+                    ((Student) object).setlName(resultSet.getString("lname"));
+                    ((Student) object).setPhoneNumber(resultSet.getString("phone"));
+                    ((Student) object).setStudentID(resultSet.getInt("studentID"));
+                    ((Student) object).setTwitterURL(resultSet.getString("twitter"));
 
-        } else if(object instanceof TimeSlot) {
+                }
 
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        } else if (object instanceof TimeSlot) {
+            privateLib.writeStringToConsole("What the heck just happened? We can't load a TimeSlot! There's no TimeTable!");
         }
         return object;
     }
@@ -185,26 +234,21 @@ public class ScheduleManager implements IScheduleManager {
     @Override
     public Object selectByID(int id, EntityType entityType) {
         Object object = getEntityTypeForEnum(entityType);
-        String tableName = getEntityNameForEnum(entityType);
-        if(object != null){
+        if (object != null) {
             Connection connection = null;
             PreparedStatement preparedStatement = null;
             ResultSet resultSet = null;
 
             try {
                 connection = connectionConfig.getConnection(reference.DBMS_FINAL, reference.DBMS_ADMIN, reference.DBMS_PASS);
-                preparedStatement = connection.prepareStatement("SELECT * FROM ? WHERE ? = ?");
-                preparedStatement.setString(1, tableName);
-                preparedStatement.setString(2, tableName.concat("ID"));
-                preparedStatement.setInt(3, id);
-
+                preparedStatement = prepareStatementForEnum(entityType, preparedStatement);
                 resultSet = preparedStatement.executeQuery();
-                loadResultSet(object, resultSet);
-            }catch (Exception e) {
+                object = loadNonArrayResultSet(object, resultSet);
+            } catch (Exception e) {
                 e.printStackTrace();
 
             } finally {
-               closeConnection(connection, preparedStatement, resultSet);
+                closeConnection(connection, preparedStatement, resultSet);
 
             }
 
@@ -218,8 +262,8 @@ public class ScheduleManager implements IScheduleManager {
     }
 
     @Override
-    public Section[] getSectionsForCourseID(int id) {
-        return new Section[0];
+    public CourseSection[] getSectionsForCourseID(int id) {
+        return new CourseSection[0];
     }
 
     @Override
@@ -243,12 +287,12 @@ public class ScheduleManager implements IScheduleManager {
     }
 
     @Override
-    public void clearCourseInformation(int id) {
+    public void clearCourseInformation(int id, EntityType entityType) {
 
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id, EntityType entityType) {
 
     }
 }

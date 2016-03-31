@@ -2,7 +2,6 @@ package com.dao;
 
 
 import com.entities.*;
-import com.sun.xml.internal.stream.Entity;
 
 /**
  * Created by abatewongc on 3/28/2016.
@@ -11,14 +10,14 @@ public interface IScheduleManager {
 
 
     enum EntityType {
-        PERSON,
         COLLEGE,
         COURSE,
         DEPARTMENT,
         PROFESSOR,
         SECTION,
         STUDENT,
-        TIME_SLOT
+        TIME_SLOT,
+        LOCATION
     }
 
     /**
@@ -49,7 +48,7 @@ public interface IScheduleManager {
     /**
      * Returns an array of courses taught or taken
      * @param id
-     * @param entityType type of entity we're looking up
+     * @param entityType type of entity we're looking up (professor or department)
      * @return an array of new courses with the relevant data filled out
      */
     Course[] getCoursesForID(int id, EntityType entityType);
@@ -59,7 +58,7 @@ public interface IScheduleManager {
      * @param id course ID
      * @return a list of new sections with the relevant data filled out
      */
-    Section[] getSectionsForCourseID(int id);
+    CourseSection[] getSectionsForCourseID(int id);
 
     /**
      * Returns an array of TimeSlots for ID
@@ -87,9 +86,10 @@ public interface IScheduleManager {
      * Clears course information. Used at the end of a semester.
      * //TODO: implement semesters, add an add-to-history method
      * @param id
+     * @param entityType
      */
-    void clearCourseInformation(int id);
+    void clearCourseInformation(int id, EntityType entityType);
 
-    void delete(int id);
+    void delete(int id, EntityType entityType);
 
 }

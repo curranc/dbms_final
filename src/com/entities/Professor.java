@@ -5,15 +5,16 @@ package com.entities;
  */
 public class Professor {
 
-    private int professorID, departmentID, pSocialID, phoneNumber, extensionNumber, officeNumber;
-    private String fName, lName, email, linkedInUrl, facebookURL, twitterURL;
+    private int professorID, departmentID;
+    private String fName, lName, email, title, linkedInUrl, facebookURL, twitterURL, phoneNumber, extensionNumber, officeNumber;
     private String[] otherSocialMediaURLS;
     private int[] sectionIDs;
 
     public Professor(){}
 
-    public Professor(int professorID, String fName, String lName, String email) {
+    public Professor(int professorID, String fName, String lName, String title, String email) {
         this.professorID = professorID;
+        this.title = title;
         this.fName = fName;
         this.lName = lName;
         this.email = email;
@@ -21,6 +22,14 @@ public class Professor {
 
     public int[] getSectionIDs() {
         return sectionIDs;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setSectionIDs(int[] sectionIDs) {
@@ -43,35 +52,27 @@ public class Professor {
         this.departmentID = departmentID;
     }
 
-    public int getPSocialID() {
-        return pSocialID;
-    }
-
-    public void setPSocialID(int PSocialID) {
-        this.pSocialID = PSocialID;
-    }
-
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getExtensionNumber() {
+    public String getExtensionNumber() {
         return extensionNumber;
     }
 
-    public void setExtensionNumber(int extensionNumber) {
+    public void setExtensionNumber(String extensionNumber) {
         this.extensionNumber = extensionNumber;
     }
 
-    public int getOfficeNumber() {
+    public String getOfficeNumber() {
         return officeNumber;
     }
 
-    public void setOfficeNumber(int officeNumber) {
+    public void setOfficeNumber(String officeNumber) {
         this.officeNumber = officeNumber;
     }
 

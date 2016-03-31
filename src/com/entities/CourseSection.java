@@ -6,11 +6,11 @@ package com.entities;
  */
 
 
-public class Section {
+public class CourseSection {
     private int sectionID, courseID, professorID, locationID;
     private TimeSlot timeSlot;
 
-    public Section(int sectionID, int courseID, int professorID, int locationID, TimeSlot timeSlot) {
+    public CourseSection(int sectionID, int courseID, int professorID, int locationID, TimeSlot timeSlot) {
         this.sectionID = sectionID;
         this.courseID = courseID;
         this.professorID = professorID;
@@ -26,7 +26,7 @@ public class Section {
         this.timeSlot = timeSlot;
     }
 
-    public Section(){}
+    public CourseSection(){}
 
     public int getProfessorID() {
         return professorID;

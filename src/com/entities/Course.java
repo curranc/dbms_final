@@ -5,25 +5,24 @@ package com.entities;
  */
 public class Course {
 
-    private int courseID;
+    private String courseID;
     private int[] sectionIDs;
     private String CourseTitle, courseDescription;
     private int DepartmentID;
 
-    public Course(int courseID, int[] sectionIDs, String courseTitle, String courseDescription, int departmentID) {
+    public Course(String courseID, String courseTitle, int departmentID){
         this.courseID = courseID;
-        this.sectionIDs = sectionIDs;
-        CourseTitle = courseTitle;
-        this.courseDescription = courseDescription;
-        DepartmentID = departmentID;
+        this.CourseTitle = courseTitle;
+        this.DepartmentID = departmentID;
     }
-    public Course(){}
 
-    public int getCourseID() {
+    public Course() {}
+
+    public String getCourseID() {
         return courseID;
     }
 
-    public void setCourseID(int courseID) {
+    public void setCourseID(String courseID) {
         this.courseID = courseID;
     }
 

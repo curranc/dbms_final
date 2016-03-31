@@ -5,7 +5,7 @@ package com.entities;
  */
 public class Department {
     private int departmentID, departmentChairID, collegeID;
-    private int[] courseIDs;
+    private int[] courseIDs, professorIDs;
     private String departmentName;
     private String websiteURL;
 
@@ -57,15 +57,19 @@ public class Department {
         this.websiteURL = websiteURL;
     }
 
-    public Department(int departmentID, int departmentChairID, int collegeID, int[] courseIDs, String departmentName, String websiteURL) {
+    public Department(int departmentID, int departmentChairID, int collegeID, String departmentName) {
         this.departmentID = departmentID;
         this.departmentChairID = departmentChairID;
         this.collegeID = collegeID;
-        this.courseIDs = courseIDs;
         this.departmentName = departmentName;
-        this.websiteURL = websiteURL;
     }
     public Department(){}
 
+    public int[] getProfessorIDs() {
+        return professorIDs;
+    }
 
+    public void setProfessorIDs(int[] professorIDs) {
+        this.professorIDs = professorIDs;
+    }
 }
