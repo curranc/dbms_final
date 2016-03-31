@@ -17,7 +17,8 @@ public interface IScheduleManager {
         DEPARTMENT,
         PROFESSOR,
         SECTION,
-        STUDENT
+        STUDENT,
+        TIME_SLOT
     }
 
     /**

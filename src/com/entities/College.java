@@ -4,7 +4,7 @@ package com.entities;
  * Created by abatewongc on 3/28/2016.
  */
 public class College {
-    private int collegeID;
+    private int collegeID, deanID;
     private String collegeName;
 
     public College(int collegeID, String collegeName) {
@@ -16,6 +16,14 @@ public class College {
     public int getCollegeID() {
 
         return collegeID;
+    }
+
+    public int getDeanID() {
+        return deanID;
+    }
+
+    public void setDeanID(int deanID) {
+        this.deanID = deanID;
     }
 
     public void setCollegeID(int collegeID) {

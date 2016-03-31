@@ -17,6 +17,7 @@ public class Course {
         this.courseDescription = courseDescription;
         DepartmentID = departmentID;
     }
+    public Course(){}
 
     public int getCourseID() {
         return courseID;

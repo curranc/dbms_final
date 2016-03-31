@@ -1,5 +1,7 @@
 package com.entities;
 
+import java.sql.Time;
+
 /**
  * Created by abatewongc on 3/30/2016.
  */
@@ -11,6 +13,7 @@ public class TimeSlot {
         this.timeEnd = timeEnd;
         this.day = day;
     }
+    public TimeSlot(){}
 
     public int getTimeStart() {
         return timeStart;
