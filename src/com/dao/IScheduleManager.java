@@ -3,6 +3,7 @@ package com.dao;
 
 import com.entities.*;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 /**
@@ -53,14 +54,14 @@ public interface IScheduleManager {
      * @param entityType type of entity we're looking up (professor or department)
      * @return an array of new courses with the relevant data filled out
      */
-    Course[] getCoursesForID(int id, EntityType entityType);
+    Course[] getCoursesForID(int id, EntityType entityType, Connection connection);
 
     /**
      * Returns all of the sections for a course ID
      * @param id course ID
      * @return a list of new sections with the relevant data filled out
      */
-    CourseSection[] getSectionsForCourseID(int id);
+    CourseSection[] getSectionsForCourseID(int id, Connection connection);
 
     /**
      * Returns an array of TimeSlots for ID
@@ -74,13 +75,14 @@ public interface IScheduleManager {
     /**
      * Returns a list of professors for the id
      * @param id professor id
-     * @param entityType professor type, fails otherwise
      * @return a new list of professors with relevant data filled out
      */
-    Professor[] getProfessorsForCourseID(String id, EntityType entityType);
-    Professor[] getProfessorsForDepartmentID(int id, EntityType entityType);
+    Professor[] getProfessorsForCourseID(String id, Connection connection);
 
 
+    int getIDFromEmail(String email, EntityType entityType, Connection connection);
+
+    int getCourseIDFromTitle(String courseTitle, Connection connection);
 
     void insert(Object object, EntityType entityType);
 

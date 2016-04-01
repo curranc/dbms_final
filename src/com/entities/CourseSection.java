@@ -8,6 +8,7 @@ package com.entities;
 
 public class CourseSection {
     private int sectionID, courseID, professorID, locationID;
+    private int[] studentIDs;
     private TimeSlot timeSlot;
 
     public CourseSection(int sectionID, int courseID, int professorID, int locationID, TimeSlot timeSlot) {
@@ -16,6 +17,14 @@ public class CourseSection {
         this.professorID = professorID;
         this.locationID = locationID;
         this.timeSlot = timeSlot;
+    }
+
+    public int[] getStudentIDs() {
+        return studentIDs;
+    }
+
+    public void setStudentIDs(int[] studentIDs) {
+        this.studentIDs = studentIDs;
     }
 
     public TimeSlot getTimeSlot() {

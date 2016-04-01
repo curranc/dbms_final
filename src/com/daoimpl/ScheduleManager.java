@@ -8,6 +8,7 @@ import com.util.reference;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by abatewongc on 3/28/2016.
@@ -25,6 +26,22 @@ public class ScheduleManager implements IScheduleManager {
         if (connection != null) {
             try {
                 connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    private static void closeConnection(PreparedStatement preparedStatement, ResultSet resultSet) {
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -147,9 +164,10 @@ public class ScheduleManager implements IScheduleManager {
 
     /**
      * One of the most atrocious methods I've ever written. God help us all.
+     * Only call this when you want every possible field filled out (NOT CHILD OBJECTS ATM)
      * @param objects the original list of objects
      * @param resultSet the data
-     * @return an object with the non-array values filled out from the resultSet
+     * @return an object ArrayList with the non-array values filled out from the resultSet
      */
     private static ArrayList<Object> loadArrayResultSet(ArrayList<Object> objects, ResultSet resultSet, EntityType entityType) {
         int i = 0;
@@ -161,7 +179,7 @@ public class ScheduleManager implements IScheduleManager {
                         College college = new College();
                         college.setCollegeID(resultSet.getInt("collegeID"));
                         college.setCollegeName(resultSet.getString("collegeName"));
-                        college.setDeanID(resultSet.getInt("deadID"));
+                        college.setDeanID(resultSet.getInt("deanID"));
 
                         objects.add(college);
                         i++;
@@ -279,6 +297,7 @@ public class ScheduleManager implements IScheduleManager {
                         location.setLocationID(resultSet.getInt("locationID"));
                         location.setName(resultSet.getString("buildingName"));
                         location.setRoomNumber(resultSet.getInt("roomNum"));
+                        i++;
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -297,7 +316,7 @@ public class ScheduleManager implements IScheduleManager {
 
     }
 
-    @SuppressWarnings("JpaQueryApiInspection")
+    // Query methods
     @Override
     public ArrayList<Object> selectByID(ArrayList<Integer> ids, EntityType entityType) {
         ArrayList<Object> objects = new ArrayList<>();
@@ -319,17 +338,88 @@ public class ScheduleManager implements IScheduleManager {
         }
         return objects;
     }
-
+    @SuppressWarnings("JpaQueryApiInspection")
     @Override
-    public Course[] getCoursesForID(int id, EntityType entityType) {
-        return new Course[0];
+    public Course[] getCoursesForID(int id, EntityType entityType, Connection connection) {
+        ArrayList<Object> courses = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            //TODO: JOINS
+            switch (entityType) {
+                case PROFESSOR:
+                    preparedStatement = connection.prepareStatement("SELECT DISTINCT *\n" +
+                            "FROM Course\n" +
+                            "WHERE Course.CourseID IN (\n" +
+                            "\tSELECT CourseSection.CourseID\n" +
+                            "\tFROM CourseSection\n" +
+                            "\tWHERE CourseSection.ProfessorID = ?\n" +
+                            ")");
+                    preparedStatement.setInt(1, id);
+                    resultSet = preparedStatement.executeQuery();
+                    courses = loadArrayResultSet(courses, resultSet, EntityType.COURSE);
+                    return (Course[]) courses.toArray();
+                case STUDENT:
+                    preparedStatement = connection.prepareStatement("SELECT DISTINCT *\n" +
+                            "FROM Course\n" +
+                            "WHERE Course.CourseID IN (\n" +
+                            "\tSELECT Section.CourseID\n" +
+                            "\tFROM Section\n" +
+                            "\tWHERE Section.SectionID IN (\n" +
+                            "\t\tSELECT Students_In_Section.SectionID\n" +
+                            "\t\tFROM Students_In_Section\n" +
+                            "\t\tWHERE Students_In_Section.StudentID = ?\n" +
+                            ")");
+                    preparedStatement.setInt(1, id);
+                    resultSet = preparedStatement.executeQuery();
+                    courses = loadArrayResultSet(courses, resultSet, EntityType.COURSE);
+                    return (Course[]) courses.toArray();
+                case DEPARTMENT:
+                    preparedStatement = connection.prepareStatement("SELECT DISTINCT *\n" +
+                            "FROM Course\n" +
+                            "WHERE Course.CourseID IN (\n" +
+                            "\tSELECT CourseSection.CourseID\n" +
+                            "\tFROM CourseSection\n" +
+                            "\tWHERE CourseSection.ProfessorID IN (\n" +
+                            "\t\tSELECT Professor.ProfessorID\n" +
+                            "\t\tFROM Professor\n" +
+                            "\t\tWHERE Department.DepartmentID = ?\n" +
+                            ")");
+                    preparedStatement.setInt(1, id);
+                    resultSet = preparedStatement.executeQuery();
+                    courses = loadArrayResultSet(courses, resultSet, EntityType.COURSE);
+                    return (Course[]) courses.toArray();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(preparedStatement, resultSet);
+        }
+        return null;
     }
-
     @Override
-    public CourseSection[] getSectionsForCourseID(int id) {
-        return new CourseSection[0];
-    }
+    public CourseSection[] getSectionsForCourseID(int id, Connection connection) {
+        ArrayList<Object> sections = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            //TODO: JOINS!
+            preparedStatement = connection.prepareStatement("SELECT * \n" +
+                    "FROM Section\n" +
+                    "WHERE Section.CourseID = ?");
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
 
+            sections = loadArrayResultSet(sections, resultSet, EntityType.SECTION);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(preparedStatement, resultSet);
+        }
+
+        return (CourseSection[]) sections.toArray();
+    }
     @Override
     public TimeSlot[] getUnavailableTimesForID(int id, EntityType entityType) {
         Object object = getEntityTypeForEnum(entityType);
@@ -357,15 +447,14 @@ public class ScheduleManager implements IScheduleManager {
         privateLib.writeStringToConsole("Impossible message and return result.");
         return null;
     }
-
     @Override
-    public Professor[] getProfessorsForCourseID(String id, EntityType entityType) {
-        Connection connection = connectionConfig.getConnection(reference.DBMS_FINAL, reference.DBMS_ADMIN, reference.DBMS_PASS);
+    public Professor[] getProfessorsForCourseID(String id, Connection connection) {
         ArrayList<Object> professors = new ArrayList<>();
-        if(entityType != EntityType.COURSE)
-            return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * \n" +
+            //TODO: JOINS
+            preparedStatement = connection.prepareStatement("SELECT * \n" +
                     "FROM Professor\n" +
                     "WHERE ProfessorID IN (\n" +
                     "\tSELECT professorID\n" +
@@ -373,20 +462,69 @@ public class ScheduleManager implements IScheduleManager {
                     "\tWHERE Section.CourseID in ?\n" +
                     ")");
             preparedStatement.setString(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
             professors = loadArrayResultSet(professors, resultSet, EntityType.PROFESSOR);
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            closeConnection(preparedStatement, resultSet);
         }
         return (Professor[]) professors.toArray();
     }
-
     @Override
-    public Professor[] getProfessorsForDepartmentID(int id, EntityType entityType) {
-        return new Professor[0];
+    public int getIDFromEmail(String email, EntityType entityType, Connection connection) {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            if(entityType == EntityType.STUDENT) {
+                preparedStatement = connection.prepareStatement("SELECT StudentContact.StudentID\n" +
+                        "FROM StudentContact\n" +
+                        "WHERE StudentContact.Email = ?");
+                preparedStatement.setString(1, email);
+                resultSet = preparedStatement.executeQuery();
+
+                return resultSet.getInt(1);
+            }
+            if(entityType == EntityType.PROFESSOR) {
+                preparedStatement = connection.prepareStatement("SELECT ProfessorContact.ProfID\n" +
+                        "FROM ProfessorContact\n" +
+                        "WHERE ProfessorContact.Email = ?");
+                preparedStatement.setString(1, email);
+                resultSet = preparedStatement.executeQuery();
+
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(preparedStatement, resultSet);
+        }
+        return -1;
     }
+    @Override
+    public int getCourseIDFromTitle(String courseTitle, Connection connection) {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+
+                preparedStatement = connection.prepareStatement("SELECT Course.CourseID\n" +
+                        "FROM Course\n" +
+                        "WHERE Course.CourseTitle = ?");
+                preparedStatement.setString(1, courseTitle);
+                resultSet = preparedStatement.executeQuery();
+
+                return resultSet.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(preparedStatement, resultSet);
+        }
+        return -1;
+    }
+
+
 
     @Override
     public void insert(Object object, EntityType entityType) {
