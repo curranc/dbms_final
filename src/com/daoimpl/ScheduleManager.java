@@ -6,10 +6,8 @@ import com.util.connectionConfig;
 import com.util.privateLib;
 import com.util.reference;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Created by abatewongc on 3/28/2016.
@@ -90,38 +88,44 @@ public class ScheduleManager implements IScheduleManager {
             //TODO: Add joins!
             case COLLEGE:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM College WHERE CollegeID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM College WHERE CollegeID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             case SECTION:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM CourseSection WHERE SectionID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM CourseSection WHERE SectionID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             case STUDENT:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM Student WHERE StudentID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Student WHERE StudentID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
 
             case PROFESSOR:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM Professor WHERE ProfessorID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Professor WHERE ProfessorID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             case DEPARTMENT:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM Department WHERE DepartmentID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Department WHERE DepartmentID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             case COURSE:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM Course WHERE CourseID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Course WHERE CourseID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -129,7 +133,8 @@ public class ScheduleManager implements IScheduleManager {
 
             case LOCATION:
                 try {
-                    return preparedStatement = connection.prepareStatement("SELECT * FROM Location WHERE LocationID = ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Location WHERE LocationID IN ?");
+                    return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -142,115 +147,146 @@ public class ScheduleManager implements IScheduleManager {
 
     /**
      * One of the most atrocious methods I've ever written. God help us all.
-     * @param object the original object
+     * @param objects the original list of objects
      * @param resultSet the data
      * @return an object with the non-array values filled out from the resultSet
      */
-    private static Object loadNonArrayResultSet(Object object, ResultSet resultSet) {
+    private static ArrayList<Object> loadArrayResultSet(ArrayList<Object> objects, ResultSet resultSet, EntityType entityType) {
+        int i = 0;
+        switch(entityType) {
+            case COLLEGE:
 
-        if (object instanceof College) {
-            try {
-                while (resultSet.next()) {
-                    ((College) object).setCollegeID(resultSet.getInt("collegeID"));
-                    ((College) object).setCollegeName(resultSet.getString("collegeName"));
-                    ((College) object).setDeanID(resultSet.getInt("deadID"));
+                try {
+                    while (resultSet.next()) {
+                        College college = new College();
+                        college.setCollegeID(resultSet.getInt("collegeID"));
+                        college.setCollegeName(resultSet.getString("collegeName"));
+                        college.setDeanID(resultSet.getInt("deadID"));
 
+                        objects.add(college);
+                        i++;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return objects;
+            case COURSE:
+                try {
 
+                    while (resultSet.next()) {
+                        Course course = new Course();
+                        course.setCourseID(resultSet.getString("courseID"));
+                        course.setCourseTitle(resultSet.getString("courseTitle"));
+                        course.setDepartmentID(resultSet.getInt("departmentID"));
+
+                        objects.add(course);
+                        i++;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return objects;
+            case DEPARTMENT:
+                try {
+                    while (resultSet.next()) {
+                        Department department = new Department();
+                        department.setCollegeID(resultSet.getInt("collegeID"));
+                        department.setDepartmentChairID(resultSet.getInt("departmentChairID"));
+                        department.setDepartmentID(resultSet.getInt("departmentID"));
+                        department.setDepartmentName(resultSet.getString("departmentName"));
+                        department.setWebsiteURL(resultSet.getString("websiteURL"));
+
+                        objects.add(department);
+                        i++;
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return objects;
+            case PROFESSOR:
+                try {
+                    while (resultSet.next()) {
+                        Professor professor = new Professor();
+                        professor.setDepartmentID(resultSet.getInt("departmentID"));
+                        professor.setEmail(resultSet.getString("email"));
+                        professor.setExtensionNumber(resultSet.getString("extensionNumber"));
+                        professor.setFacebookURL(resultSet.getString("facebookURL"));
+                        professor.setLinkedInUrl(resultSet.getString("linkedInURL"));
+                        professor.setfName(resultSet.getString("fName"));
+                        professor.setlName(resultSet.getString("lName"));
+                        professor.setOfficeNumber(resultSet.getString("officeNumber"));
+                        professor.setPhoneNumber(resultSet.getString("phoneNumber"));
+                        professor.setProfessorID(resultSet.getInt("professorID"));
+                        professor.setTwitterURL(resultSet.getString("twitterURL"));
+
+                        objects.add(professor);
+                        i++;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return objects;
+            case SECTION:
+                try {
+                    while (resultSet.next()) {
+                        CourseSection section = new CourseSection();
+                        section.setCourseID(resultSet.getInt("courseID"));
+                        section.setLocationID(resultSet.getInt("locationID"));
+                        section.setProfessorID(resultSet.getInt("professorID"));
+                        section.setTimeSlot(new TimeSlot(resultSet.getString("timeStart"), resultSet.getString("timeEnd"), resultSet.getInt("day")));
+
+                        objects.add(section);
+                        i++;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
 
-        } else if (object instanceof Course) {
-            try {
-                while (resultSet.next()) {
-                    ((Course) object).setCourseID(resultSet.getString("courseID"));
-                    ((Course) object).setCourseTitle(resultSet.getString("courseTitle"));
-                    ((Course) object).setDepartmentID(resultSet.getInt("departmentID"));
+                return objects;
+            case STUDENT:
+                try {
+                    while (resultSet.next()) {
+                        Student student = new Student();
+
+                        student.setEmail(resultSet.getString("email"));
+                        student.setFacebookURL(resultSet.getString("facebook"));
+                        student.setfName(resultSet.getString("fname"));
+                        student.setGradYear(resultSet.getInt("gradyear"));
+                        student.setLinkedInURL(resultSet.getString("linkedin"));
+                        student.setlName(resultSet.getString("lname"));
+                        student.setPhoneNumber(resultSet.getString("phone"));
+                        student.setStudentID(resultSet.getInt("studentID"));
+                        student.setTwitterURL(resultSet.getString("twitter"));
+
+                        objects.add(student);
+                        i++;
+
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
+                return objects;
+            case TIME_SLOT:
+                privateLib.writeStringToConsole("What the heck just happened? We can't load a TimeSlot! There's no TimeTable!");
+                return objects;
+            case LOCATION:
+                try {
+                    while (resultSet.next()) {
+                        Location location = new Location();
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-
-        } else if (object instanceof Department) {
-            try {
-                while (resultSet.next()) {
-                    ((Department) object).setCollegeID(resultSet.getInt("collegeID"));
-                    ((Department) object).setDepartmentChairID(resultSet.getInt("departmentChairID"));
-                    ((Department) object).setDepartmentID(resultSet.getInt("departmentID"));
-                    ((Department) object).setDepartmentName(resultSet.getString("departmentName"));
-                    ((Department) object).setWebsiteURL(resultSet.getString("websiteURL"));
+                        location.setLocationID(resultSet.getInt("locationID"));
+                        location.setName(resultSet.getString("buildingName"));
+                        location.setRoomNumber(resultSet.getInt("roomNum"));
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-
-        } else if (object instanceof Professor) {
-            try {
-                while (resultSet.next()) {
-                    ((Professor) object).setDepartmentID(resultSet.getInt("departmentID"));
-                    ((Professor) object).setEmail(resultSet.getString("email"));
-                    ((Professor) object).setExtensionNumber(resultSet.getString("extensionNumber"));
-                    ((Professor) object).setFacebookURL(resultSet.getString("facebookURL"));
-                    ((Professor) object).setLinkedInUrl(resultSet.getString("linkedInURL"));
-                    ((Professor) object).setfName(resultSet.getString("fName"));
-                    ((Professor) object).setlName(resultSet.getString("lName"));
-                    ((Professor) object).setOfficeNumber(resultSet.getString("officeNumber"));
-                    ((Professor) object).setPhoneNumber(resultSet.getString("phoneNumber"));
-                    ((Professor) object).setProfessorID(resultSet.getInt("professorID"));
-                    ((Professor) object).setTwitterURL(resultSet.getString("twitterURL"));
-
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-
-        } else if (object instanceof CourseSection) {
-            try {
-                while (resultSet.next()) {
-                    ((CourseSection) object).setCourseID(resultSet.getInt("courseID"));
-                    ((CourseSection) object).setLocationID(resultSet.getInt("locationID"));
-                    ((CourseSection) object).setProfessorID(resultSet.getInt("professorID"));
-                    ((CourseSection) object).setTimeSlot(new TimeSlot(resultSet.getString("timeStart"), resultSet.getString("timeEnd"), resultSet.getInt("day")));
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-
-        } else if (object instanceof Student) {
-            try {
-                while (resultSet.next()) {
-                    ((Student) object).setEmail(resultSet.getString("email"));
-                    ((Student) object).setFacebookURL(resultSet.getString("facebook"));
-                    ((Student) object).setfName(resultSet.getString("fname"));
-                    ((Student) object).setGradYear(resultSet.getInt("gradyear"));
-                    ((Student) object).setLinkedInURL(resultSet.getString("linkedin"));
-                    ((Student) object).setlName(resultSet.getString("lname"));
-                    ((Student) object).setPhoneNumber(resultSet.getString("phone"));
-                    ((Student) object).setStudentID(resultSet.getInt("studentID"));
-                    ((Student) object).setTwitterURL(resultSet.getString("twitter"));
-
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-        } else if (object instanceof TimeSlot) {
-            privateLib.writeStringToConsole("What the heck just happened? We can't load a TimeSlot! There's no TimeTable!");
+                return objects;
         }
-        return object;
+        return null;
     }
-
     @Override
     public void createScheduleManagerDB() {
 
@@ -263,29 +299,25 @@ public class ScheduleManager implements IScheduleManager {
 
     @SuppressWarnings("JpaQueryApiInspection")
     @Override
-    public Object selectByID(int id, EntityType entityType) {
-        Object object = getEntityTypeForEnum(entityType);
-        if (object != null) {
-            Connection connection = null;
-            PreparedStatement preparedStatement = null;
-            ResultSet resultSet = null;
-
-            try {
-                connection = connectionConfig.getConnection(reference.DBMS_FINAL, reference.DBMS_ADMIN, reference.DBMS_PASS);
-                preparedStatement = prepareStatementForEnum(entityType, preparedStatement, connection);
-                preparedStatement.setInt(1, id);
+    public ArrayList<Object> selectByID(ArrayList<Integer> ids, EntityType entityType) {
+        ArrayList<Object> objects = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = connectionConfig.getConnection(reference.DBMS_FINAL, reference.DBMS_ADMIN, reference.DBMS_PASS);
+            preparedStatement = prepareStatementForEnum(entityType, preparedStatement, connection);
+            if(preparedStatement != null) {
+                preparedStatement.setArray(1, connection.createArrayOf("int", ids.toArray()));
                 resultSet = preparedStatement.executeQuery();
-                object = loadNonArrayResultSet(object, resultSet);
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            } finally {
-                closeConnection(connection, preparedStatement, resultSet);
-
+                objects = loadArrayResultSet(objects, resultSet, entityType);
             }
-
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection(connection, preparedStatement, resultSet);
         }
-        return object;
+        return objects;
     }
 
     @Override
@@ -300,12 +332,12 @@ public class ScheduleManager implements IScheduleManager {
 
     @Override
     public TimeSlot[] getUnavailableTimesForID(int id, EntityType entityType) {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
         Object object = getEntityTypeForEnum(entityType);
-        object = selectByID(id, entityType);
+        ArrayList<Integer> ids = new ArrayList<>();
+        ids.add(id);
+        if(!(object instanceof Student) && !(object instanceof Professor))
+            return null;
+        object = selectByID(ids, entityType).get(0);
         if (object instanceof Student) {
             CourseSection[] times = ((Student) object).getSectionsTaken();
             TimeSlot[] timeSlots = new TimeSlot[times.length];
@@ -322,12 +354,33 @@ public class ScheduleManager implements IScheduleManager {
             }
             return timeSlots;
         }
+        privateLib.writeStringToConsole("Impossible message and return result.");
         return null;
     }
 
     @Override
-    public Professor[] getProfessorsForCourseID(int id, EntityType entityType) {
-        return new Professor[0];
+    public Professor[] getProfessorsForCourseID(String id, EntityType entityType) {
+        Connection connection = connectionConfig.getConnection(reference.DBMS_FINAL, reference.DBMS_ADMIN, reference.DBMS_PASS);
+        ArrayList<Object> professors = new ArrayList<>();
+        if(entityType != EntityType.COURSE)
+            return null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * \n" +
+                    "FROM Professor\n" +
+                    "WHERE ProfessorID IN (\n" +
+                    "\tSELECT professorID\n" +
+                    "\tFROM Section\n" +
+                    "\tWHERE Section.CourseID in ?\n" +
+                    ")");
+            preparedStatement.setString(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            professors = loadArrayResultSet(professors, resultSet, EntityType.PROFESSOR);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (Professor[]) professors.toArray();
     }
 
     @Override

@@ -3,6 +3,8 @@ package com.dao;
 
 import com.entities.*;
 
+import java.util.ArrayList;
+
 /**
  * Created by abatewongc on 3/28/2016.
  */
@@ -39,11 +41,11 @@ public interface IScheduleManager {
 
     /**
      *  Returns an object
-     * @param id the id of the entity we're looking for
+     * @param ids the id of the entity we're looking for
      * @param entityType the type of entity we want
      * @return a new object with the relevant data filled out
      */
-    Object selectByID(int id, EntityType entityType);
+    ArrayList<Object> selectByID(ArrayList<Integer> ids, EntityType entityType);
 
     /**
      * Returns an array of courses taught or taken
@@ -75,7 +77,7 @@ public interface IScheduleManager {
      * @param entityType professor type, fails otherwise
      * @return a new list of professors with relevant data filled out
      */
-    Professor[] getProfessorsForCourseID(int id, EntityType entityType);
+    Professor[] getProfessorsForCourseID(String id, EntityType entityType);
     Professor[] getProfessorsForDepartmentID(int id, EntityType entityType);
 
 

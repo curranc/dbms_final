@@ -2,18 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b87fd03-d7d4-499f-bf4f-b59b8eb199fa" name="Default" comment="initial commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/entities/Location.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/entities/Section.java" afterPath="$PROJECT_DIR$/src/com/entities/CourseSection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dao/IScheduleManager.java" afterPath="$PROJECT_DIR$/src/com/dao/IScheduleManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/daoimpl/ScheduleManager.java" afterPath="$PROJECT_DIR$/src/com/daoimpl/ScheduleManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/entities/Course.java" afterPath="$PROJECT_DIR$/src/com/entities/Course.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/entities/Department.java" afterPath="$PROJECT_DIR$/src/com/entities/Department.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/entities/Professor.java" afterPath="$PROJECT_DIR$/src/com/entities/Professor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/entities/Student.java" afterPath="$PROJECT_DIR$/src/com/entities/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/entities/TimeSlot.java" afterPath="$PROJECT_DIR$/src/com/entities/TimeSlot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/util/privateLib.java" afterPath="$PROJECT_DIR$/src/com/util/privateLib.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
+    </list>
+    <list id="3cfb3801-da10-4107-8ccb-9f19eed699b8" name="New changelist" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/classes/com/dao/PersonDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/classes/com/daoimpl/PersonDaoImpl.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/classes/com/entities/Person.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/classes/com/util/connectionConfig.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/classes/com/util/privateLib.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/classes/main.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.37-bin.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/dao/ChinookDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/dao/PersonDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/daoimpl/ChinookDaoImpl.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/daoimpl/PersonDaoImpl.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/entities/Person.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/util/connectionConfig.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/util/privateLib.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/com/util/reference.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/OOPFinal/main.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/dmbs_final/com/dao/ChinookDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/dmbs_final/com/daoimpl/ChinookDaoImpl.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/dmbs_final/com/entities/College.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/dmbs_final/com/entities/Professor.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/dmbs_final/com/entities/Student.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/sun-jaxws.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/checkLogin.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/createAccount.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/createAccountConfirm.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/createLogin.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/depositBalance.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/error.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/error2.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/homepage.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/index.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/OOPFinal_war_exploded/withdrawBalance.jsp" />
     </list>
     <ignored path="OOPFinal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,57 +79,64 @@
       <file leaf-file-name="ScheduleManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/daoimpl/ScheduleManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68048126">
-              <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.022727273">
+              <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#closeConnection#0;class#ScheduleManager#0" expanded="false" />
                 <element signature="method#getEntityTypeForEnum#0;class#ScheduleManager#0" expanded="false" />
-                <element signature="method#loadNonArrayResultSet#0;class#ScheduleManager#0" expanded="false" />
-                <element signature="e#9426#9427#0" expanded="true" />
-                <element signature="e#9462#9463#0" expanded="true" />
-                <element signature="e#9537#9538#0" expanded="true" />
-                <element signature="e#9580#9581#0" expanded="true" />
-                <element signature="e#9674#9675#0" expanded="true" />
-                <element signature="e#9712#9713#0" expanded="true" />
-                <element signature="e#9808#9809#0" expanded="true" />
-                <element signature="e#9847#9848#0" expanded="true" />
-                <element signature="e#9947#9948#0" expanded="true" />
-                <element signature="e#9986#9987#0" expanded="true" />
+                <element signature="method#getEntityNameForEnum#0;class#ScheduleManager#0" expanded="false" />
+                <element signature="method#prepareStatementForEnum#0;class#ScheduleManager#0" expanded="false" />
+                <element signature="method#selectByID#0;class#ScheduleManager#0" expanded="false" />
+                <element signature="e#12936#12937#0" expanded="true" />
+                <element signature="e#12972#12973#0" expanded="true" />
+                <element signature="e#13047#13048#0" expanded="true" />
+                <element signature="e#13090#13091#0" expanded="true" />
+                <element signature="method#getUnavailableTimesForID#0;class#ScheduleManager#0" expanded="false" />
+                <element signature="method#getProfessorsForCourseID#0;class#ScheduleManager#0" expanded="false" />
+                <element signature="e#15426#15427#0" expanded="true" />
+                <element signature="e#15465#15466#0" expanded="true" />
+                <marker date="1459536577905" expanded="true" signature="2858:2900" placeholder="SELECT * FRO... College" />
+                <marker date="1459536577905" expanded="true" signature="3169:3217" placeholder="SELECT * FRO... CourseSection" />
+                <marker date="1459536577905" expanded="true" signature="3486:3528" placeholder="SELECT * FRO... Student" />
+                <marker date="1459536577905" expanded="true" signature="3800:3846" placeholder="SELECT * FRO... Professor" />
+                <marker date="1459536577905" expanded="true" signature="4118:4166" placeholder="SELECT * FRO... Department" />
+                <marker date="1459536577905" expanded="true" signature="4434:4474" placeholder="SELECT * FRO... Course" />
+                <marker date="1459536577905" expanded="true" signature="4773:4817" placeholder="SELECT * FRO... Location" />
+                <marker date="1459536577905" expanded="true" signature="14710:14980" placeholder="SELECT profe... Section" />
+                <marker date="1459536577905" expanded="true" signature="14710:14981" placeholder="SELECT * \nF... Professor" />
+                <marker date="1459536577905" expanded="true" signature="14838:14953" placeholder="SELECT profe... Section" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResultSet.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/ResultSet.java">
+      <file leaf-file-name="NullPointerException.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/NullPointerException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="528" column="20" selection-start-line="528" selection-start-column="20" selection-end-line="528" selection-end-column="20" />
+              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/entities/Location.java">
+      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-              <folding>
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#583#584#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#774#775#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-              </folding>
+              <caret line="1279" column="32" selection-start-line="1279" selection-start-column="32" selection-end-line="1279" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,18 +145,10 @@
         <entry file="file://$PROJECT_DIR$/src/com/dao/IScheduleManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/PersonDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,82 +157,55 @@
         <entry file="file://$PROJECT_DIR$/src/com/entities/Professor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="85" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
-              <folding>
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#689#690#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-                <element signature="e#791#792#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/entities/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseSection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/entities/CourseSection.java">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/entities/Course.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/daoimpl/PersonDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="107" selection-start-line="37" selection-start-column="107" selection-end-line="37" selection-end-column="107" />
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding>
-                <element signature="method#insert#0;class#PersonDaoImpl#0" expanded="false" />
-                <element signature="method#selectByUsername#0;class#PersonDaoImpl#0" expanded="false" />
-                <element signature="method#delete#0;class#PersonDaoImpl#0" expanded="false" />
-                <element signature="method#updateBalance#0;class#PersonDaoImpl#0" expanded="false" />
-                <element signature="method#withdrawBalance#0;class#PersonDaoImpl#0" expanded="false" />
-                <marker date="1459349963393" expanded="true" signature="1080:1247" placeholder="CREATE TABLE... IF" />
-                <marker date="1459349963393" expanded="true" signature="2065:2146" placeholder="INSERT INTO person... " />
-                <marker date="1459349963393" expanded="true" signature="3402:3435" placeholder="SELECT * FRO... person" />
-                <marker date="1459349963393" expanded="true" signature="4744:4783" placeholder="SELECT * FRO... person" />
-                <marker date="1459349963393" expanded="true" signature="6086:6117" placeholder="DELETE FROM " />
-                <marker date="1459349963393" expanded="true" signature="7130:7220" placeholder="UPDATE perso... " />
+                <element signature="e#566#567#0" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChinookDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/daoimpl/ChinookDaoImpl.java">
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="20" selection-start-column="17" selection-end-line="43" selection-end-column="0" />
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
-                <element signature="method#test#0;class#ChinookDaoImpl#0" expanded="false" />
-                <element signature="method#closeConnection#0;class#ChinookDaoImpl#0" expanded="false" />
-                <element signature="method#getCustomersByCountry#0;class#ChinookDaoImpl#0" expanded="false" />
-                <element signature="method#getEmployeeList#0;class#ChinookDaoImpl#0" expanded="false" />
-                <element signature="method#getCustomersServed#0;class#ChinookDaoImpl#0" expanded="false" />
-                <element signature="method#getCustomerList#0;class#ChinookDaoImpl#0" expanded="false" />
-                <element signature="method#getCustomerInvoiceList#0;class#ChinookDaoImpl#0" expanded="false" />
-                <marker date="1459349963386" expanded="true" signature="1483:1610" placeholder="SELECT COUNT... Customer" />
-                <marker date="1459349963386" expanded="true" signature="2405:2645" placeholder="SELECT Emplo... Employee" />
-                <marker date="1459349963386" expanded="true" signature="3531:3662" placeholder="SELECT COUNT... Customer" />
-                <marker date="1459349963386" expanded="true" signature="4446:4757" placeholder="SELECT Custo... Customer" />
-                <marker date="1459349963386" expanded="true" signature="5765:6168" placeholder="SELECT Invoi... InvoiceLine" />
-                <marker date="1459349963386" expanded="true" signature="5968:6083" placeholder="SELECT Invoi... Invoice" />
-                <marker date="1459349963386" expanded="true" signature="6697:7484" placeholder="SELECT Invoi... InvoiceLine" />
-                <marker date="1459349963386" expanded="true" signature="7253:7374" placeholder="SELECT Invoi... Invoice" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Integer.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Integer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.24138">
+              <caret line="1552" column="30" selection-start-line="1552" selection-start-column="27" selection-end-line="1552" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeSlot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/entities/TimeSlot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+              <folding>
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#789#790#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -275,12 +274,16 @@
         <option value="C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/ResultSet.java" />
         <option value="$PROJECT_DIR$/src/com/entities/TimeSlot.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Course.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/com/util/privateLib.java" />
-        <option value="$PROJECT_DIR$/src/com/dao/IScheduleManager.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Location.java" />
-        <option value="$PROJECT_DIR$/src/com/entities/Professor.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Student.java" />
+        <option value="$PROJECT_DIR$/src/com/entities/Professor.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/IScheduleManager.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/Array.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Integer.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/NullPointerException.java" />
         <option value="$PROJECT_DIR$/src/com/daoimpl/ScheduleManager.java" />
       </list>
     </option>
@@ -307,8 +310,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -336,6 +339,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -556,8 +561,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -583,121 +586,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\abatewongc\IdeaProjects\OOPFinal\web\oopfinal" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/dao/IScheduleManager.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/daoimpl/ScheduleManager.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/entities/College.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/entities/Course.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/entities/TimeSlot.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/util/reference.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1054,36 +942,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1164,21 +1022,6 @@
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
-    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.1.1" ALTERNATIVE_JRE_ENABLED="false">
@@ -1284,6 +1127,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0b87fd03-d7d4-499f-bf4f-b59b8eb199fa" name="Default" comment="" />
+      <changelist id="3cfb3801-da10-4107-8ccb-9f19eed699b8" name="New changelist" comment="" />
       <created>1448297234617</created>
       <option name="number" value="Default" />
       <updated>1448297234617</updated>
@@ -1314,6 +1158,7 @@
       <workItem from="1459201301795" duration="558000" />
       <workItem from="1459201941066" duration="237000" />
       <workItem from="1459349973034" duration="18453000" />
+      <workItem from="1459519542816" duration="9326000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1459201522377</created>
@@ -1321,11 +1166,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459201522377</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updates to getUnavailableTimes method in ScheduleManger; &#10;refactoring in Student/Professor classes to include an array of sections, rather an array of sectionID's">
+      <created>1459523322566</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459523322566</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91790000" />
+    <option name="totallyTimeSpent" value="101116000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1337,7 +1188,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1349,24 +1200,24 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18828452" sideWeight="0.7140625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18814433" sideWeight="0.7140625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.249375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.084375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32860824" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Notes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39958158" sideWeight="0.49583334" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Notes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32860824" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1383,11 +1234,12 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="updates to getUnavailableTimes method in ScheduleManger; &#10;refactoring in Student/Professor classes to include an array of sections, rather an array of sectionID's" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates to getUnavailableTimes method in ScheduleManger; &#10;refactoring in Student/Professor classes to include an array of sections, rather an array of sectionID's" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1396,41 +1248,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/createAccount.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Double.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="536" column="25" selection-start-line="536" selection-start-column="25" selection-end-line="536" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Double.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="536" column="25" selection-start-line="536" selection-start-column="25" selection-end-line="536" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Double.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1491,13 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33278957">
           <caret line="421" column="0" selection-start-line="421" selection-start-column="0" selection-end-line="421" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1643,14 +1453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/ChinookDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/util/connectionConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1663,43 +1465,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/entities/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
           <folding>
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="false" />
+            <element signature="e#831#832#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/TimeSlot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1724,26 +1497,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/CourseSection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dao/PersonDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/IScheduleManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1769,54 +1526,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Professor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="85" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
-          <folding>
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/ResultSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="528" column="20" selection-start-line="528" selection-start-column="20" selection-end-line="528" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/daoimpl/PersonDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="107" selection-start-line="37" selection-start-column="107" selection-end-line="37" selection-end-column="107" />
-          <folding>
-            <element signature="method#insert#0;class#PersonDaoImpl#0" expanded="false" />
-            <element signature="method#selectByUsername#0;class#PersonDaoImpl#0" expanded="false" />
-            <element signature="method#delete#0;class#PersonDaoImpl#0" expanded="false" />
-            <element signature="method#updateBalance#0;class#PersonDaoImpl#0" expanded="false" />
-            <element signature="method#withdrawBalance#0;class#PersonDaoImpl#0" expanded="false" />
-            <marker date="1459349963393" expanded="true" signature="1080:1247" placeholder="CREATE TABLE... IF" />
-            <marker date="1459349963393" expanded="true" signature="2065:2146" placeholder="INSERT INTO person... " />
-            <marker date="1459349963393" expanded="true" signature="3402:3435" placeholder="SELECT * FRO... person" />
-            <marker date="1459349963393" expanded="true" signature="4744:4783" placeholder="SELECT * FRO... person" />
-            <marker date="1459349963393" expanded="true" signature="6086:6117" placeholder="DELETE FROM " />
-            <marker date="1459349963393" expanded="true" signature="7130:7220" placeholder="UPDATE perso... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1832,37 +1546,181 @@
             <element signature="method#getCustomersServed#0;class#ChinookDaoImpl#0" expanded="false" />
             <element signature="method#getCustomerList#0;class#ChinookDaoImpl#0" expanded="false" />
             <element signature="method#getCustomerInvoiceList#0;class#ChinookDaoImpl#0" expanded="false" />
-            <marker date="1459349963386" expanded="true" signature="1483:1610" placeholder="SELECT COUNT... Customer" />
-            <marker date="1459349963386" expanded="true" signature="2405:2645" placeholder="SELECT Emplo... Employee" />
-            <marker date="1459349963386" expanded="true" signature="3531:3662" placeholder="SELECT COUNT... Customer" />
-            <marker date="1459349963386" expanded="true" signature="4446:4757" placeholder="SELECT Custo... Customer" />
-            <marker date="1459349963386" expanded="true" signature="5765:6168" placeholder="SELECT Invoi... InvoiceLine" />
-            <marker date="1459349963386" expanded="true" signature="5968:6083" placeholder="SELECT Invoi... Invoice" />
-            <marker date="1459349963386" expanded="true" signature="6697:7484" placeholder="SELECT Invoi... InvoiceLine" />
-            <marker date="1459349963386" expanded="true" signature="7253:7374" placeholder="SELECT Invoi... Invoice" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/ChinookDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/daoimpl/PersonDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="44" />
+          <folding>
+            <element signature="method#insert#0;class#PersonDaoImpl#0" expanded="false" />
+            <element signature="method#selectByUsername#0;class#PersonDaoImpl#0" expanded="false" />
+            <element signature="method#delete#0;class#PersonDaoImpl#0" expanded="false" />
+            <element signature="method#updateBalance#0;class#PersonDaoImpl#0" expanded="false" />
+            <element signature="method#withdrawBalance#0;class#PersonDaoImpl#0" expanded="false" />
+            <marker date="1455894694426" expanded="true" signature="1080:1247" placeholder="CREATE TABLE... IF" />
+            <marker date="1455894694426" expanded="true" signature="2065:2146" placeholder="INSERT INTO person... " />
+            <marker date="1455894694426" expanded="true" signature="3402:3435" placeholder="SELECT * FRO... person" />
+            <marker date="1455894694426" expanded="true" signature="4744:4783" placeholder="SELECT * FRO... person" />
+            <marker date="1455894694426" expanded="true" signature="6086:6117" placeholder="DELETE FROM " />
+            <marker date="1455894694426" expanded="true" signature="7130:7220" placeholder="UPDATE perso... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/CourseSection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Professor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1279" column="32" selection-start-line="1279" selection-start-column="32" selection-end-line="1279" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/sql/Array.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44923505">
+          <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/TimeSlot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.24138">
+          <caret line="1552" column="30" selection-start-line="1552" selection-start-column="27" selection-end-line="1552" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/IScheduleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/NullPointerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/NullPointerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/daoimpl/ScheduleManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68048126">
-          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.022727273">
+          <caret line="285" column="0" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#closeConnection#0;class#ScheduleManager#0" expanded="false" />
             <element signature="method#getEntityTypeForEnum#0;class#ScheduleManager#0" expanded="false" />
-            <element signature="method#loadNonArrayResultSet#0;class#ScheduleManager#0" expanded="false" />
-            <element signature="e#9426#9427#0" expanded="true" />
-            <element signature="e#9462#9463#0" expanded="true" />
-            <element signature="e#9537#9538#0" expanded="true" />
-            <element signature="e#9580#9581#0" expanded="true" />
-            <element signature="e#9674#9675#0" expanded="true" />
-            <element signature="e#9712#9713#0" expanded="true" />
-            <element signature="e#9808#9809#0" expanded="true" />
-            <element signature="e#9847#9848#0" expanded="true" />
-            <element signature="e#9947#9948#0" expanded="true" />
-            <element signature="e#9986#9987#0" expanded="true" />
+            <element signature="method#getEntityNameForEnum#0;class#ScheduleManager#0" expanded="false" />
+            <element signature="method#prepareStatementForEnum#0;class#ScheduleManager#0" expanded="false" />
+            <element signature="method#selectByID#0;class#ScheduleManager#0" expanded="false" />
+            <element signature="e#12936#12937#0" expanded="true" />
+            <element signature="e#12972#12973#0" expanded="true" />
+            <element signature="e#13047#13048#0" expanded="true" />
+            <element signature="e#13090#13091#0" expanded="true" />
+            <element signature="method#getUnavailableTimesForID#0;class#ScheduleManager#0" expanded="false" />
+            <element signature="method#getProfessorsForCourseID#0;class#ScheduleManager#0" expanded="false" />
+            <element signature="e#15426#15427#0" expanded="true" />
+            <element signature="e#15465#15466#0" expanded="true" />
+            <marker date="1459536577905" expanded="true" signature="2858:2900" placeholder="SELECT * FRO... College" />
+            <marker date="1459536577905" expanded="true" signature="3169:3217" placeholder="SELECT * FRO... CourseSection" />
+            <marker date="1459536577905" expanded="true" signature="3486:3528" placeholder="SELECT * FRO... Student" />
+            <marker date="1459536577905" expanded="true" signature="3800:3846" placeholder="SELECT * FRO... Professor" />
+            <marker date="1459536577905" expanded="true" signature="4118:4166" placeholder="SELECT * FRO... Department" />
+            <marker date="1459536577905" expanded="true" signature="4434:4474" placeholder="SELECT * FRO... Course" />
+            <marker date="1459536577905" expanded="true" signature="4773:4817" placeholder="SELECT * FRO... Location" />
+            <marker date="1459536577905" expanded="true" signature="14710:14980" placeholder="SELECT profe... Section" />
+            <marker date="1459536577905" expanded="true" signature="14710:14981" placeholder="SELECT * \nF... Professor" />
+            <marker date="1459536577905" expanded="true" signature="14838:14953" placeholder="SELECT profe... Section" />
           </folding>
         </state>
       </provider>
