@@ -67,7 +67,7 @@ public interface IScheduleManager {
      * @return a list of new timeslots with the times that the id is already booked
      *         (because I think it would be easier to do it this way rather than getting the available times)
      */
-    TimeSlot[] getUnvailableTimesForID(int id, EntityType entityType);
+    TimeSlot[] getUnavailableTimesForID(int id, EntityType entityType);
 
     /**
      * Returns a list of professors for the id
@@ -88,7 +88,7 @@ public interface IScheduleManager {
      * @param id
      * @param entityType
      */
-    void clearCourseInformation(int id, EntityType entityType);
+    void clearSectionInformation(int id, EntityType entityType);
 
     void delete(int id, EntityType entityType);
 

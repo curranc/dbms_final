@@ -8,7 +8,7 @@ public class Professor {
     private int professorID, departmentID;
     private String fName, lName, email, title, linkedInUrl, facebookURL, twitterURL, phoneNumber, extensionNumber, officeNumber;
     private String[] otherSocialMediaURLS;
-    private int[] sectionIDs;
+    private CourseSection[] sectionsTaught;
 
     public Professor(){}
 
@@ -20,8 +20,8 @@ public class Professor {
         this.email = email;
     }
 
-    public int[] getSectionIDs() {
-        return sectionIDs;
+    public CourseSection[] getSectionsTaught() {
+        return sectionsTaught;
     }
 
     public String getTitle() {
@@ -32,8 +32,8 @@ public class Professor {
         this.title = title;
     }
 
-    public void setSectionIDs(int[] sectionIDs) {
-        this.sectionIDs = sectionIDs;
+    public void setSectionsTaught(CourseSection[] sectionsTaught) {
+        this.sectionsTaught = sectionsTaught;
     }
 
     public int getProfessorID() {

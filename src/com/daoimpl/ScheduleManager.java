@@ -85,23 +85,54 @@ public class ScheduleManager implements IScheduleManager {
         privateLib.writeStringToConsole("Nonvalid Entity-Type, returning null because I'm a dick!");
         return null;
     }
-    private static PreparedStatement prepareStatementForEnum(EntityType entityType, PreparedStatement preparedStatement){
+    private static PreparedStatement prepareStatementForEnum(EntityType entityType, PreparedStatement preparedStatement, Connection connection){
         switch (entityType) {
+            //TODO: Add joins!
             case COLLEGE:
-
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM College WHERE CollegeID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             case SECTION:
-
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM CourseSection WHERE SectionID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             case STUDENT:
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM Student WHERE StudentID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             case PROFESSOR:
-
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM Professor WHERE ProfessorID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             case DEPARTMENT:
-
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM Department WHERE DepartmentID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             case COURSE:
-
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM Course WHERE CourseID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             case TIME_SLOT:
 
             case LOCATION:
+                try {
+                    return preparedStatement = connection.prepareStatement("SELECT * FROM Location WHERE LocationID = ?");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
         }
         privateLib.writeStringToConsole("Nonvalid Entity-Type, returning null because I'm a dick!");
         return preparedStatement;
@@ -241,7 +272,8 @@ public class ScheduleManager implements IScheduleManager {
 
             try {
                 connection = connectionConfig.getConnection(reference.DBMS_FINAL, reference.DBMS_ADMIN, reference.DBMS_PASS);
-                preparedStatement = prepareStatementForEnum(entityType, preparedStatement);
+                preparedStatement = prepareStatementForEnum(entityType, preparedStatement, connection);
+                preparedStatement.setInt(1, id);
                 resultSet = preparedStatement.executeQuery();
                 object = loadNonArrayResultSet(object, resultSet);
             } catch (Exception e) {
@@ -267,8 +299,30 @@ public class ScheduleManager implements IScheduleManager {
     }
 
     @Override
-    public TimeSlot[] getUnvailableTimesForID(int id, EntityType entityType) {
-        return new TimeSlot[0];
+    public TimeSlot[] getUnavailableTimesForID(int id, EntityType entityType) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        Object object = getEntityTypeForEnum(entityType);
+        object = selectByID(id, entityType);
+        if (object instanceof Student) {
+            CourseSection[] times = ((Student) object).getSectionsTaken();
+            TimeSlot[] timeSlots = new TimeSlot[times.length];
+            for(int i = 0; i < times.length; i++) {
+                timeSlots[i] = times[i].getTimeSlot();
+            }
+            return timeSlots;
+        }
+        if(object instanceof Professor){
+            CourseSection[] times = ((Professor) object).getSectionsTaught();
+            TimeSlot[] timeSlots = new TimeSlot[times.length];
+            for(int i = 0; i < times.length; i++){
+                timeSlots[i] = times[i].getTimeSlot();
+            }
+            return timeSlots;
+        }
+        return null;
     }
 
     @Override
@@ -287,7 +341,7 @@ public class ScheduleManager implements IScheduleManager {
     }
 
     @Override
-    public void clearCourseInformation(int id, EntityType entityType) {
+    public void clearSectionInformation(int id, EntityType entityType) {
 
     }
 

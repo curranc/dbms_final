@@ -6,7 +6,7 @@ package com.entities;
 public class Student {
 
     private int studentID, gradYear;
-    private int[] sectionsTaken;
+    private CourseSection[] sectionsTaken;
     private String fName, lName, email, linkedInURL, facebookURL, phoneNumber, twitterURL;
     private String[] otherSocialMediaURLs;
 
@@ -43,11 +43,11 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
-    public int[] getSectionsTaken() {
+    public CourseSection[] getSectionsTaken() {
         return sectionsTaken;
     }
 
-    public void setSectionsTaken(int[] sectionsTaken) {
+    public void setSectionsTaken(CourseSection[] sectionsTaken) {
         this.sectionsTaken = sectionsTaken;
     }
 
