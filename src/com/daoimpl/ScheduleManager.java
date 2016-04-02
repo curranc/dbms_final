@@ -127,14 +127,14 @@ public class ScheduleManager implements IScheduleManager {
 
             case PROFESSOR:
                 try {
-                    preparedStatement = connection.prepareStatement("SELECT * FROM Professor WHERE ProfessorID IN ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Professor WHERE ProfID IN ?");
                     return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             case DEPARTMENT:
                 try {
-                    preparedStatement = connection.prepareStatement("SELECT * FROM Department WHERE DepartmentID IN ?");
+                    preparedStatement = connection.prepareStatement("SELECT * FROM Department WHERE DeptID IN ?");
                     return preparedStatement;
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -178,8 +178,8 @@ public class ScheduleManager implements IScheduleManager {
                     while (resultSet.next()) {
                         College college = new College();
                         college.setCollegeID(resultSet.getInt("collegeID"));
-                        college.setCollegeName(resultSet.getString("collegeName"));
-                        college.setDeanID(resultSet.getInt("deanID"));
+                        college.setCollegeName(resultSet.getString("CollegeName"));
+                        college.setDeanID(resultSet.getInt("CollegeDean"));
 
                         objects.add(college);
                         i++;
@@ -194,8 +194,8 @@ public class ScheduleManager implements IScheduleManager {
                     while (resultSet.next()) {
                         Course course = new Course();
                         course.setCourseID(resultSet.getString("courseID"));
-                        course.setCourseTitle(resultSet.getString("courseTitle"));
-                        course.setDepartmentID(resultSet.getInt("departmentID"));
+                        course.setCourseTitle(resultSet.getString("CourseTitle"));
+                        course.setDepartmentID(resultSet.getInt("DeptID"));
 
                         objects.add(course);
                         i++;
@@ -208,11 +208,11 @@ public class ScheduleManager implements IScheduleManager {
                 try {
                     while (resultSet.next()) {
                         Department department = new Department();
-                        department.setCollegeID(resultSet.getInt("collegeID"));
-                        department.setDepartmentChairID(resultSet.getInt("departmentChairID"));
-                        department.setDepartmentID(resultSet.getInt("departmentID"));
-                        department.setDepartmentName(resultSet.getString("departmentName"));
-                        department.setWebsiteURL(resultSet.getString("websiteURL"));
+                        department.setCollegeID(resultSet.getInt("CollegeID"));
+                        department.setDepartmentChairID(resultSet.getInt("DChairID"));
+                        department.setDepartmentID(resultSet.getInt("DeptID"));
+                        department.setDepartmentName(resultSet.getString("DeptName"));
+                        department.setWebsiteURL(resultSet.getString("WebURL"));
 
                         objects.add(department);
                         i++;
@@ -226,17 +226,16 @@ public class ScheduleManager implements IScheduleManager {
                 try {
                     while (resultSet.next()) {
                         Professor professor = new Professor();
-                        professor.setDepartmentID(resultSet.getInt("departmentID"));
+                        professor.setDepartmentID(resultSet.getInt("DeptID"));
                         professor.setEmail(resultSet.getString("email"));
-                        professor.setExtensionNumber(resultSet.getString("extensionNumber"));
-                        professor.setFacebookURL(resultSet.getString("facebookURL"));
-                        professor.setLinkedInUrl(resultSet.getString("linkedInURL"));
+                        professor.setFacebookURL(resultSet.getString("facebook"));
+                        professor.setLinkedInUrl(resultSet.getString("linkedIn"));
                         professor.setfName(resultSet.getString("fName"));
                         professor.setlName(resultSet.getString("lName"));
-                        professor.setOfficeNumber(resultSet.getString("officeNumber"));
-                        professor.setPhoneNumber(resultSet.getString("phoneNumber"));
-                        professor.setProfessorID(resultSet.getInt("professorID"));
-                        professor.setTwitterURL(resultSet.getString("twitterURL"));
+                        professor.setOfficeNumber(resultSet.getString("office"));
+                        professor.setPhoneNumber(resultSet.getString("phone"));
+                        professor.setProfessorID(resultSet.getInt("ProfID"));
+                        professor.setTwitterURL(resultSet.getString("twitter"));
 
                         objects.add(professor);
                         i++;
@@ -251,8 +250,8 @@ public class ScheduleManager implements IScheduleManager {
                         CourseSection section = new CourseSection();
                         section.setCourseID(resultSet.getInt("courseID"));
                         section.setLocationID(resultSet.getInt("locationID"));
-                        section.setProfessorID(resultSet.getInt("professorID"));
-                        section.setTimeSlot(new TimeSlot(resultSet.getString("timeStart"), resultSet.getString("timeEnd"), resultSet.getInt("day")));
+                        section.setProfessorID(resultSet.getInt("profID"));
+                        section.setTimeSlot(new TimeSlot(resultSet.getString("timeStart"), resultSet.getString("EndTime"), resultSet.getInt("day")));
 
                         objects.add(section);
                         i++;
@@ -295,7 +294,7 @@ public class ScheduleManager implements IScheduleManager {
                         Location location = new Location();
 
                         location.setLocationID(resultSet.getInt("locationID"));
-                        location.setName(resultSet.getString("buildingName"));
+                        location.setName(resultSet.getString("building"));
                         location.setRoomNumber(resultSet.getInt("roomNum"));
                         i++;
                     }
@@ -353,7 +352,7 @@ public class ScheduleManager implements IScheduleManager {
                             "WHERE Course.CourseID IN (\n" +
                             "\tSELECT CourseSection.CourseID\n" +
                             "\tFROM CourseSection\n" +
-                            "\tWHERE CourseSection.ProfessorID = ?\n" +
+                            "\tWHERE CourseSection.ProfID = ?\n" +
                             ")");
                     preparedStatement.setInt(1, id);
                     resultSet = preparedStatement.executeQuery();
@@ -366,9 +365,9 @@ public class ScheduleManager implements IScheduleManager {
                             "\tSELECT Section.CourseID\n" +
                             "\tFROM Section\n" +
                             "\tWHERE Section.SectionID IN (\n" +
-                            "\t\tSELECT Students_In_Section.SectionID\n" +
-                            "\t\tFROM Students_In_Section\n" +
-                            "\t\tWHERE Students_In_Section.StudentID = ?\n" +
+                            "\t\tSELECT StudentsInSection.SectionID\n" +
+                            "\t\tFROM StudentsInSection\n" +
+                            "\t\tWHERE StudentsInSection.StudentID = ?\n" +
                             ")");
                     preparedStatement.setInt(1, id);
                     resultSet = preparedStatement.executeQuery();
@@ -380,10 +379,10 @@ public class ScheduleManager implements IScheduleManager {
                             "WHERE Course.CourseID IN (\n" +
                             "\tSELECT CourseSection.CourseID\n" +
                             "\tFROM CourseSection\n" +
-                            "\tWHERE CourseSection.ProfessorID IN (\n" +
-                            "\t\tSELECT Professor.ProfessorID\n" +
+                            "\tWHERE CourseSection.ProfID IN (\n" +
+                            "\t\tSELECT Professor.ProfID\n" +
                             "\t\tFROM Professor\n" +
-                            "\t\tWHERE Department.DepartmentID = ?\n" +
+                            "\t\tWHERE Department.DeptID = ?\n" +
                             ")");
                     preparedStatement.setInt(1, id);
                     resultSet = preparedStatement.executeQuery();
@@ -456,8 +455,8 @@ public class ScheduleManager implements IScheduleManager {
             //TODO: JOINS
             preparedStatement = connection.prepareStatement("SELECT * \n" +
                     "FROM Professor\n" +
-                    "WHERE ProfessorID IN (\n" +
-                    "\tSELECT professorID\n" +
+                    "WHERE ProfID IN (\n" +
+                    "\tSELECT profID\n" +
                     "\tFROM Section\n" +
                     "\tWHERE Section.CourseID in ?\n" +
                     ")");
